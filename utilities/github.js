@@ -1,5 +1,5 @@
 const core              = require('@actions/core');
-const {GitHub, context} = require('@actions/github');
+const {getOctokit, context} = require('@actions/github');
 
 module.exports = {
 
@@ -7,7 +7,7 @@ module.exports = {
         const token = core.getInput('github-token', {required: true});
         const sha   = core.getInput('sha');
 
-        const client = new GitHub(token, {});
+        const client = getOctokit(token, {});
 
         const result = await client.repos.listPullRequestsAssociatedWithCommit({
             owner: context.repo.owner,
