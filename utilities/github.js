@@ -8,6 +8,9 @@ module.exports = {
      * @returns {!Promise<?{number: !number, title: !string, body: !string}>}
      */
     getPullRequestAssociatedWithContext: async function () {
+
+        console.log(context);
+
         const token = core.getInput('github-token', {required: true});
         const sha   = core.getInput('sha');
 
