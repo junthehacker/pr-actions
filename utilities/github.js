@@ -1,8 +1,12 @@
-const core              = require('@actions/core');
+const core                  = require('@actions/core');
 const {getOctokit, context} = require('@actions/github');
 
 module.exports = {
 
+    /**
+     * Returns the pull request associated with current context, null if no PR is associated with it.
+     * @returns {!Promise<?{number: !number, title: !string, body: !string}>}
+     */
     getPullRequestAssociatedWithContext: async function () {
         const token = core.getInput('github-token', {required: true});
         const sha   = core.getInput('sha');
@@ -23,10 +27,7 @@ module.exports = {
                 title: pr.title,
                 body: pr.body,
             };
-        } else {
-            return null;
         }
-
     }
 
 }
