@@ -9,4 +9,5 @@ jobs:
       id: hello
       uses: junthehacker/pr-actions@v1.2
       with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
         who-to-greet: 'Mona the Octocat'
