@@ -7,7 +7,6 @@ jobs:
     steps:
     - name: Hello world action step
       id: hello
-      uses: junthehacker/pr-actions@v1.3
+      uses: junthehacker/pr-actions@v1.4
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
-        who-to-greet: 'Mona the Octocat'
