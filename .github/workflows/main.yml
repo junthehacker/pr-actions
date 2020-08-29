@@ -7,6 +7,6 @@ jobs:
     steps:
     - name: Hello world action step
       id: hello
-      uses: junthehacker/pr-actions@v1.4
+      uses: junthehacker/pr-actions@v1.5
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
